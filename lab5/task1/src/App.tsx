@@ -17,6 +17,8 @@ const skills: Skill[] = [
 function App() {
   return (
     <div>
+      <h1>Lab 5 Task 1</h1>
+
       <UserCard user={user} isActive={true}>
         <p>Bio: Frontend Developer</p>
       </UserCard>
