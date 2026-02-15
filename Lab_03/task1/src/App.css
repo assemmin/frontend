@@ -1,0 +1,25 @@
+.App {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+button {
+  margin: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background: #f4f4f4;
+  margin: 2px;
+  padding: 5px;
+  border-radius: 4px;
+}
