@@ -1,0 +1,69 @@
+import { useState } from "react";
+import { User } from "./types";
+
+const INITIAL_DATA: User[] = [
+  { name: "Alice", email: "alice@mail.com", age: 25 },
+  { name: "Bob", email: "bob@mail.com", age: 30 },
+  { name: "Charlie", email: "charlie@mail.com", age: 22 },
+  { name: "David", email: "david@mail.com", age: 28 },
+  { name: "Eva", email: "eva@mail.com", age: 26 },
+];
+
+const SearchApp = () => {
+  const [users] = useState<User[]>(INITIAL_DATA);
+  const [filteredUsers, setFilteredUsers] =
+    useState<User[]>(INITIAL_DATA);
+
+  const [searchTerm, setSearchTerm] = useState("");
+
+  // typed ChangeEvent
+  const handleSearch = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const term = event.target.value;
+    setSearchTerm(term);
+
+    setFilteredUsers(
+      users.filter((u) =>
+        u.name.toLowerCase().includes(term.toLowerCase())
+      )
+    );
+  };
+
+  // typed MouseEvent
+  const handleClear = (
+    event: React.MouseEvent<HTMLButtonElement>
+  ) => {
+    setSearchTerm("");
+    setFilteredUsers(users);
+  };
+
+  return (
+    <div>
+      <h2>User Search</h2>
+
+      <input
+        type="text"
+        value={searchTerm}
+        onChange={handleSearch}
+        placeholder="Search user..."
+      />
+
+      <button onClick={handleClear}>Clear</button>
+
+      {filteredUsers.length === 0 ? (
+        <p>No results found</p>
+      ) : (
+        <ul>
+          {filteredUsers.map((user) => (
+            <li key={user.email}>
+              {user.name} — {user.email}
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+};
+
+export default SearchApp;
