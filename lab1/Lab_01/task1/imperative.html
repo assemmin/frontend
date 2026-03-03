@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imperative Implementation - jQuery Toggle Highlight</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+        
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .highlight {
+            background-color: yellow;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Imperative Toggle Highlight (jQuery)</h1>
+    
+    <button id="toggleBtn">Toggle Highlight</button>
+    
+    <p id="targetParagraph">
+        This is a paragraph that demonstrates the imperative approach to DOM manipulation.
+        When you click the button above, jQuery will directly manipulate the DOM by adding 
+        or removing the highlight class. This is the traditional, step-by-step approach to 
+        updating the user interface.
+    </p>
+    
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <script>
+        // Imperative approach: manually manipulating the DOM
+        // Steps are explicit: select element, attach handler, toggle class
+        
+        $('#toggleBtn').click(function() {
+            // Step 1: Select the paragraph element
+            // Step 2: Toggle the highlight class manually
+            $('#targetParagraph').toggleClass('highlight');
+        });
+    </script>
+</body>
+</html>
