@@ -2,7 +2,7 @@ import { Component, ReactNode } from "react";
 
 interface Props {
   children: ReactNode;
-  fallback: ReactNode;
+  fallback: ReactNode; // 
 }
 
 interface State {
@@ -15,23 +15,42 @@ class ErrorBoundary extends Component<Props, State> {
     this.state = { hasError: false };
   }
 
+  resetError = () => {
+    this.setState({ hasError: false });
+  };
   static getDerivedStateFromError(): State {
     return { hasError: true };
   }
 
-  resetError = () => {
-    this.setState({ hasError: false });
-  };
+  componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
+    console.error("Error caught by ErrorBoundary:", error, errorInfo);
+  }
 
   render() {
     if (this.state.hasError) {
+      // Рендерим fallback + кнопку Try Again
       return (
-        <div>
+        <div style={{ textAlign: "center", marginTop: "2rem" }}>
           {this.props.fallback}
-          <button onClick={this.resetError}>Try Again</button>
+          <br />
+          <button
+            style={{
+              marginTop: "1rem",
+              padding: "0.5rem 1rem",
+              fontSize: "1rem",
+              cursor: "pointer",
+            }}
+            onClick={() => {
+              this.resetError();           
+              window.location.href = "/";  
+            }}
+          >
+            Try Again
+          </button>
         </div>
       );
     }
+
     return this.props.children;
   }
 }
