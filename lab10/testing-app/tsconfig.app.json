@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    "isolatedModules": false,
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+
+    "target": "ES2023",
+    "useDefineForClassFields": true,
+
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
+
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+
+    "types": ["jest", "@testing-library/jest-dom"],
+
+    "skipLibCheck": true,
+
+    /* JSX */
+    "jsx": "react-jsx",
+
+    /* IMPORTANT FIX FOR JEST */
+    "verbatimModuleSyntax": false,
+
+    /* Bundler mode */
+    "allowImportingTsExtensions": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+
+    /* ❗ временно лучше отключить для тестов */
+    "erasableSyntaxOnly": false,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true,
+
+    "esModuleInterop": true
+  },
+  "include": ["src"]
+}
