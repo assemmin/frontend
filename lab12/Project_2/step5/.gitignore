@@ -1,9 +1,7 @@
 # Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
-
+node_modules_old_from_step5/
 # dependencies
 node_modules/
-**/node_modules_old_from_step5/
-lab12/Project_2/step5_fixed/
 
 # Expo
 .expo/
