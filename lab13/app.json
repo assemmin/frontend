@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "Lab 13 Navigation",
+    "slug": "lab13-react-navigation",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true
+  }
+}
+
